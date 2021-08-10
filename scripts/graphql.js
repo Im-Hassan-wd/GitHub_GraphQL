@@ -1,15 +1,13 @@
-const key = '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';
-
-const getData = async (login) => {
+const getData = async (loginName) => {
 
   const graphqlQuery = JSON.stringify ({
     query: `{
-       user(login: "${login}") {
+       user(login: "${loginName}") {
        name
        login
        bio
        avatarUrl
-       repositories(first: 20) {
+       repositories(last: 20) {
            nodes {
            url
            name
@@ -33,6 +31,7 @@ const getData = async (login) => {
   const data = await response.json();
 
   return data.data;
+
 }
 // getData("iamshaunjp")
 //   .then(data => console.log(data))
