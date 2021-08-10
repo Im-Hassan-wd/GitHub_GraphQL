@@ -97,6 +97,9 @@ form.addEventListener('submit', e => {
 
   const username = form.username.value.trim();
   form.reset();
+  menu.classList.remove('active');
+  burger.classList.remove('fa-times');
+  repository.classList.remove('active');
 
   // get user
   getUser(username)
