@@ -17,7 +17,6 @@ const updateUI = (data) => {
 
   const userDetails = data.user;
   const repositories = data.user.repositories.nodes;
-  console.log(data);
 
   // update user detaills
   userImage.innerHTML = `
@@ -37,7 +36,7 @@ const updateUI = (data) => {
   mainList.innerHTML = `
     <div class="list">
       <i class="fas fa-book-open"><a href="#">Overview</a></i>
-      <i class="fas fa-"><a href="#">Repositories</a></i>
+      <i class="fas fa-"><a href="#">Repositories</a>${repositories.length}</i>
       <i class="fas fa-poll"><a href="#">Projects</a></i>
       <i class="fas fa-dice-d6"><a href="#">Packages</a></i>
     </div>
@@ -80,10 +79,12 @@ const updateUI = (data) => {
           </div>
     `;
 });
-
-
 }
 
+const error = (err) =>{
+
+  repository.innerHTML = '<h1>Oops! This user profile does not exist.</h1>';
+}
 // geting user details
 const getUser = async (username) => {
 
@@ -104,6 +105,6 @@ form.addEventListener('submit', e => {
   // get user
   getUser(username)
     .then(data => updateUI(data))
-    .catch(err => console.log(err))
+    .catch(err => error())
 
 });

@@ -45,13 +45,15 @@ header form{
   margin: 5px 15px;
   /* min-width: 250px; */
 }
-header form span{
+header form button{
   color: #999;
   font-size: 0.8rem;
-  border: 1px solid #999;
+  border: 1px solid #333;
   padding: 2px 7px;
   border-radius: 3px;
-  margin: 1px
+  margin: 1px;
+  background: none;
+  cursor: pointer;
 }
 header form input{
   min-width: 100px;
@@ -113,7 +115,6 @@ nav a:hover{
   display: flex;
 }
 aside{
-  /* width: 30%; */
 }
 .avatar{
   width: 280px;
@@ -136,7 +137,6 @@ aside{
   color: #999;
 }
 .about p{
-  width: 280px;
   font-size: 0.9rem;
   padding: 5px 0;
   line-height: 1.3rem;
@@ -353,8 +353,8 @@ aside{
     width: 200px;
   }
 }
-@media screen and (max-width: 375px){
-  header{
-
+@media (max-width:400px){
+  .avatar{
+    padding: 0;
   }
 }
