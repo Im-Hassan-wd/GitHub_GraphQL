@@ -268,7 +268,7 @@ aside{
 }
 
 /* reposiveness */
-@media screen and (max-width: 800px){
+@media screen and (max-width: 810px){
   header{
     width: 50%;
   }
