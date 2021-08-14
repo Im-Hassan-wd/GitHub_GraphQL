@@ -82,7 +82,6 @@ const updateUI = (data) => {
 }
 
 const error = (err) =>{
-
   repository.innerHTML = '<h1>Oops! This user profile does not exist.</h1>';
 }
 // geting user details
@@ -105,6 +104,6 @@ form.addEventListener('submit', e => {
   // get user
   getUser(username)
     .then(data => updateUI(data))
-    .catch(err => error())
+    .catch(err => console.log(err));
 
 });
